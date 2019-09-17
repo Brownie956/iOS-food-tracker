@@ -25,9 +25,11 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         if let meal = meal {
             navigationItem.title = meal.name
             nameTextField.text = meal.name
+            nameTextField.accessibilityIdentifier = "meal-name-input"
             photoImageView.image = meal.photo
             ratingControl.rating = meal.rating
         }
+        saveButton.accessibilityIdentifier = "save-meal"
 
         updateSaveButtonState()
     }
